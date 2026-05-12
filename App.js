@@ -5,7 +5,7 @@ import Header from './Components/Header/Header';
 import HomePage from "./Pages/Home/HomePage";
 import AboutPage from "./Pages/About/AboutPage";
 import Footer from "./Components/Footer/Footer.jsx"
-import TeamPage from "./Pages/TeamPage/TeamPage.jsx"
+import TeamPage from "././src/Pages/TeamPage/TeamPage.jsx";
 
 function App() {
   return (

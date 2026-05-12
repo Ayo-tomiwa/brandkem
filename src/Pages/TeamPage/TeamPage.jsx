@@ -5,6 +5,7 @@ import TeamCarousel from "../../Components/Pages/Home/Team/TeamCarousel/TeamCaro
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+AOS.init();
 
 const TeamPage = () => {
   return (

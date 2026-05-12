@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import classes from "./GetInTouch.module.css";
-import { Link } from "react-router-dom";
 import group from "../../../../images/group.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
