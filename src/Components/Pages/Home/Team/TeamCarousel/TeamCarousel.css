@@ -8,7 +8,6 @@
   margin: 0 auto;
 }
 
-/* Header */
 .tc-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -45,7 +44,6 @@
   line-height: 1.75;
 }
 
-/* 3-column grid */
 .tc-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,7 +51,6 @@
   margin-bottom: 2.5rem;
 }
 
-/* Card */
 .tc-card {
   background: #fff;
   border-radius: 16px;
@@ -69,11 +66,17 @@
 }
 
 @keyframes tcFadeIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Photo */
 .tc-photo-wrap {
   position: relative;
   width: 100%;
@@ -97,10 +100,13 @@
 .tc-photo-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(26, 10, 46, 0.55) 0%, transparent 60%);
+  background: linear-gradient(
+    to top,
+    rgba(26, 10, 46, 0.55) 0%,
+    transparent 60%
+  );
 }
 
-/* Card body */
 .tc-body {
   padding: 1.25rem 1.25rem 1.5rem;
 }
@@ -135,7 +141,6 @@
   overflow: hidden;
 }
 
-/* Controls */
 .tc-controls {
   display: flex;
   align-items: center;
@@ -188,7 +193,8 @@
   border-radius: 4px;
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .tc-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -199,7 +205,16 @@
   .tc-grid {
     grid-template-columns: 1fr;
   }
+
   .tc-section {
     padding: 3rem 5%;
+  }
+
+  .tc-body {
+    padding: 1rem;
+  }
+
+  .tc-photo-wrap {
+    height: 260px;
   }
 }

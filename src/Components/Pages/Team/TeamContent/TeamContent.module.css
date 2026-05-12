@@ -1,6 +1,5 @@
 .teamContentContainer {
   width: 100%;
-  /* background-color: red; */
   margin-top: 7rem;
 }
 
@@ -21,4 +20,41 @@
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   margin-top: 2rem;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 1024px) {
+  .teamContentWrapper {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .teamContentContainer {
+    margin-top: 5rem;
+  }
+
+  .teamContentWrapper h3 {
+    font-size: 1.7rem;
+  }
+
+  .teamContentWrapper p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .teamContentWrapper {
+    width: 92%;
+  }
+
+  .teamContentWrapper h3 {
+    font-size: 1.5rem;
+  }
+
+  .teamContentWrapper p {
+    font-size: 0.93rem;
+  }
 }

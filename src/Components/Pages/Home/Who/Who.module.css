@@ -11,9 +11,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 80%;
-  margin: 0 auto;
   gap: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   font-family: "Poppins", sans-serif;
 }
 
@@ -22,9 +23,13 @@
   width: 50%;
 }
 
+.img {
+  border-radius: 10px;
+  object-fit: cover;
+}
+
 .whoText h3 {
   color: white;
-  font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
 }
@@ -33,19 +38,16 @@
   font-size: 2.2rem;
   color: white;
   margin-top: 15px;
-  font-family: "Poppins", sans-serif;
+  line-height: 1.3;
   font-weight: 800;
-  font-style: normal;
 }
 
 .whoText p {
   font-size: 1rem;
-  line-height: 25px;
+  line-height: 1.9;
   margin-top: 10px;
-  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: rgb(185, 185, 185);
-  font-style: normal;
 }
 
 .whoLink {
@@ -54,9 +56,7 @@
 
 .whoBtn {
   background-color: rgb(186, 184, 184);
-  border: 1px solid purple;
   border: none;
-  margin: 0 auto;
   padding: 15px 35px;
   color: #000;
   margin-top: 30px;
@@ -67,24 +67,104 @@
   font-size: 1rem;
   border: 1px solid rgb(42, 42, 42);
   transition: background-color 0.3s ease;
-  cursor: pointer;
 }
 
 .whoBtn:hover {
-  transition: background-color 0.5s ease;
   border: 1px solid purple;
   color: #fff;
   background-color: purple;
 }
 
 .whoBtn a {
-  color: #fff;
+  color: #000;
   width: 100%;
   text-decoration: none;
 }
 
+/* ================= RESPONSIVE ================= */
+
 @media screen and (max-width: 1024px) {
   .whoWrapper {
     width: 90%;
+  }
+}
+
+@media (max-width: 900px) {
+  .whoWrapper {
+    flex-direction: column;
+  }
+
+  .whoText,
+  .img {
+    width: 100%;
+  }
+
+  .whoText {
+    text-align: center;
+  }
+
+  .whoLink {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .whoContainer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .whoText h3 {
+    font-size: 1.1rem;
+  }
+
+  .whoText h1 {
+    font-size: 1.7rem;
+    line-height: 1.4;
+  }
+
+  .whoText p {
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .whoText {
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whoContainer {
+    padding: 4rem 1rem;
+  }
+
+  .whoText h3 {
+    font-size: 0.95rem;
+  }
+
+  .whoText h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .whoText p {
+    font-size: 0.88rem;
+  }
+
+  /* tighter layout like blocks */
+  .whoText p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  .whoText {
+    gap: 0.8rem;
+  }
+
+  .whoBtn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
   }
 }

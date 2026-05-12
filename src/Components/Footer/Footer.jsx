@@ -10,36 +10,40 @@ const Footer = () => {
     <div className={classes.FooterContainer}>
       <div className={classes.FooterWrapper}>
         <div>
-          <h3>Kindly follow and like us</h3>
+          <h3>Follow Us</h3>
+
           <div className={classes.social}>
-            <FaFacebookSquare />
-            <FaSquareXTwitter />
-            <FaSquareInstagram />
-            <FaYoutube />
+            <FaFacebookSquare className={classes.icon} />
+            <FaSquareXTwitter className={classes.icon} />
+            <FaSquareInstagram className={classes.icon} />
+            <FaYoutube className={classes.icon} />
           </div>
         </div>
+
         <div>
           <h3>Opening Hours</h3>
+
           <div className={classes.cont}>
             <p>Monday – Friday: 8:00 am – 5:00 pm</p>
             <p>Saturday & Sunday: CLOSED</p>
           </div>
         </div>
+
         <div>
           <h3>Contact Us</h3>
+
           <div className={classes.cont}>
-            <p>15, Asiata Solarin Cresent, Olusosun Lagos</p>
+            <p>15, Asiata Solarin Crescent, Olusosun Lagos</p>
             <p>+23460535212</p>
-            <p>email: brandkemistry@gmail.com</p>
+            <p>brandkemistry@gmail.com</p>
           </div>
         </div>
-        <div>
-          <h3>Instagram</h3>
-        </div>
       </div>
+
       <hr />
+
       <p className={classes.copy}>
-        2026 © BrandKemistry, All rights reserved .
+        2026 © BrandKemistry, All rights reserved.
       </p>
     </div>
   );

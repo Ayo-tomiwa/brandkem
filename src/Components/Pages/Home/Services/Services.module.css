@@ -6,7 +6,6 @@
 .serviceWrapper {
   width: 80%;
   margin: 0 auto;
-  /* text-align: center; */
 }
 
 .serviceWrapper h3 {
@@ -29,7 +28,7 @@
 .serviceBox .box {
   background-color: rgb(240, 237, 240);
   box-shadow: 20px 20px 24px rgba(148, 148, 148, 0.08);
-  height: 100% !important;
+  height: 100%;
   border-radius: 10px;
   padding: 30px 15px 34px;
   padding-left: 40px;
@@ -65,8 +64,47 @@
   font-weight: 400;
 }
 
+/* ================= RESPONSIVE ================= */
+
 @media screen and (max-width: 1024px) {
   .serviceWrapper {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .serviceBox {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .serviceBox .box {
+    padding: 25px;
+  }
+
+  .box h4 {
+    font-size: 1.15rem;
+  }
+
+  .box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .servicesContainer {
+    margin-top: 4rem;
+  }
+
+  .serviceWrapper {
+    width: 92%;
+  }
+
+  .serviceWrapper h3 {
+    font-size: 1.3rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
   }
 }

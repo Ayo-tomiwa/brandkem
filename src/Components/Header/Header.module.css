@@ -1,4 +1,3 @@
-/* Header.module.css */
 .headerContainer {
   width: 100%;
   padding: 1rem 0;
@@ -8,72 +7,74 @@
   transition: background-color 0.3s ease, padding 0.3s ease,
     box-shadow 0.3s ease;
   z-index: 1000;
-  background-color: transparent; /* Default background */
-  box-shadow: none; /* No shadow initially */
+  background-color: transparent;
 }
 
 .headerWrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 80%;
   margin: 0 auto;
-  /* padding-top: 20px;
-  padding-bottom: 20px; */
   align-items: center;
 }
 
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
-  width: 80px; /* reduced from 100px for better fit */
+  width: 80px;
 }
 
 .logo img {
   width: 100%;
   height: auto;
   object-fit: contain;
-  display: block;
 }
 
-.headerWrapper a {
-  text-decoration: none;
-  color: white; /* Default link color */
-  font-weight: 400;
-  font-style: normal;
-  font-family: "Poppins", sans-serif;
-}
-
-.headerWrapper ul {
+/* LINKS */
+.navLinks {
   display: flex;
-  flex-direction: row;
   gap: 2rem;
-}
-
-.headerWrapper ul li {
   list-style: none;
 }
 
-.headerWrapper ul li a {
+.navLinks li a {
   text-decoration: none;
-  color: white; /* Default link color */
-  font-weight: 400;
-  font-style: normal;
+  color: white;
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
-/* Scrolled state */
+.navLinks li a:hover {
+  color: #d6a3ff;
+}
+
+/* SCROLL STATE */
 .scrolled {
-  background-color: white; /* Change to white on scroll */
-  padding: 0.5rem 0; /* Adjust padding for compact look on scroll */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on scroll */
+  background-color: white;
+  padding: 0.6rem 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.scrolled .headerWrapper a,
-.scrolled .headerWrapper ul li a {
-  color: black; /* Change link color to black on scroll */
+.scrolled .navLinks li a {
+  color: black;
 }
+
+.scrolled .logo img {
+  filter: brightness(0);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media screen and (max-width: 1024px) {
   .headerWrapper {
@@ -82,7 +83,46 @@
 }
 
 @media screen and (max-width: 768px) {
-  .headerWrapper ul {
-    display: none;
+  .hamburger {
+    display: block;
+    color: white;
+    font-size: 2rem;
+    z-index: 1200;
+  }
+
+  /* BACKDROP (IMPORTANT FIX) */
+  .navBackdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    z-index: 999;
+  }
+
+  .navBackdrop.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* MENU */
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%; /* better UX than 100% */
+    height: 100vh;
+    background-color: rgb(26, 10, 46);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: 0.4s ease-in-out;
+    z-index: 1100;
+  }
+
+  .active {
+    right: 0;
   }
 }

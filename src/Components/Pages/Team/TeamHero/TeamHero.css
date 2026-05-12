@@ -50,17 +50,42 @@
   letter-spacing: 0.12em;
 }
 
-@media (max-width: 560px) {
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
   .team-hero {
-    height: 50vh;
+    height: 55vh;
+    padding-top: 5rem;
   }
 
   .team-hero-title {
-    font-size: 38px;
+    font-size: 48px;
   }
 
   .team-hero-sub {
-    font-size: 13px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .team-hero {
+    height: 50vh;
+    min-height: 300px;
+    padding-top: 6rem;
+  }
+
+  .team-hero-title {
+    font-size: 34px;
+    line-height: 1.25;
+  }
+
+  .team-hero-sub {
+    font-size: 12px;
     line-height: 1.7;
+    letter-spacing: 0.08em;
+  }
+
+  .team-hero-breadcrumb {
+    font-size: 11px;
   }
 }

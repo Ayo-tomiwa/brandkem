@@ -13,7 +13,7 @@ const GetInTouch = () => {
     <div className={classes.GetInTouchContainer}>
       <div className={classes.GetInTouchWrapper} data-aos="fade-down">
         <img src={group} alt="" />
-        <h3>Get In Touch</h3>
+        <h3 style={{ color: "white" }}>Get In Touch</h3>
         <p className={classes.bold}>
           Have any questions or enquiries? Or you want to work with us? Send us
           a mess age below
