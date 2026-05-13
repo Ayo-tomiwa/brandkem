@@ -14,8 +14,6 @@ import p10 from "../../../../images/portfolio/product-10.jpeg";
 import p11 from "../../../../images/portfolio/product-11.jpeg";
 import p12 from "../../../../images/portfolio/product-12.jpeg";
 
-<img loading="lazy" decoding="async" />
-
 const portfolioItems = [
     {
         img: p1,
@@ -144,7 +142,7 @@ const Portfolio = () => {
                                 }`}
                         >
                             <div className={classes.portfolioImgWrap}>
-                                <img src={item.img} alt={item.title}     loading="lazy"
+                                <img src={item.img} alt={item.title || ""}     loading="lazy"
     decoding="async" />
                             </div>
 

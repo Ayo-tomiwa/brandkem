@@ -140,7 +140,7 @@ const TeamCarousel = () => {
               <div className="tc-photo-wrap">
                 <img
                   src={member.image}
-                  alt={member.name}
+                  alt={member.name || ""}
                   className="tc-photo"
                       loading="lazy"
     decoding="async"
