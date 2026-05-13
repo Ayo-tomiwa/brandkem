@@ -104,6 +104,12 @@
   }
 }
 
+@media (max-width: 560px) {
+  .heroContainer {
+    min-height: 75vh;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .heroWrapper {
     padding-top: 11rem;

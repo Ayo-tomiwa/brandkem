@@ -70,7 +70,7 @@
 @media (max-width: 560px) {
   .team-hero {
     height: 50vh;
-    min-height: 300px;
+    min-height: 75vh;
     padding-top: 6rem;
   }
 
