@@ -5,6 +5,7 @@ import Services from "../../Components/Pages/Home/Services/Services";
 import GetInTouch from "../../Components/Pages/Home/GetInTouch/GetInTouch";
 import Team from "../../Components/Pages/Home/Team/Team";
 import Hero from "../../Components/Pages/Home/Hero/Hero";
+import Portfolio from "../../Components/Pages/Home/Portfolio/Portfolio";
 
 const HomePage = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage = () => {
         <Services />
         <Who />
         <Team />
+        <Portfolio />
         <Partners />
         <GetInTouch />
       </div>

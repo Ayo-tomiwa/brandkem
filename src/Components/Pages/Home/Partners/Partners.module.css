@@ -10,7 +10,7 @@
   justify-items: center;
   align-items: center;
   margin: 0 auto;
-  padding: 0 1rem; /* prevents edge sticking on small screens */
+  padding: 0 1rem;
 }
 
 .partnersWrapper h3 {
@@ -26,7 +26,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(120px, 1fr));
   gap: 3rem;
-  justify-items: center;   /* centers items inside each grid cell */
+  justify-items: center; 
   align-items: center;
   margin-top: 3rem;
 }

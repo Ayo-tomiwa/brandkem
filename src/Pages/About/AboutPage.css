@@ -164,13 +164,86 @@
   .about-values-grid {
     grid-template-columns: 1fr;
   }
+
+  /* ↓ Hero shorter on tablet */
   .about-hero {
-    height: 50vh;
+    height: 45vh;
+    min-height: 280px;
+  }
+
+  .about-hero-content {
+    padding: 0 5% 2.5rem;
+  }
+
+  .about-hero-title {
+    font-size: clamp(28px, 6vw, 40px);
   }
 }
 
 @media (max-width: 560px) {
+  /* ↓ Hero more compact on mobile */
+  .about-hero {
+    height: 40vh;
+    min-height: 240px;
+  }
+
   .about-hero-content {
-    padding: 0 5% 3rem;
+    padding: 0 5% 2rem;
+  }
+
+  .about-hero-breadcrumb {
+    font-size: 11px;
+  }
+
+  .about-hero-title {
+    font-size: clamp(24px, 7vw, 34px);
+  }
+}
+
+/* ── Get In Touch responsive overrides ── */
+/* These target the shared GetInTouch component when rendered on smaller screens */
+@media (max-width: 768px) {
+  /* Wider container on tablet */
+  .get-in-touch-wrapper,
+  [class*="getInTouchWrapper"],
+  [class*="get-in-touch"] .container {
+    width: 94% !important;
+    max-width: 100% !important;
+  }
+
+  [class*="getInTouch"] h2,
+  [class*="get-in-touch"] h2 {
+    font-size: 1.7rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Wider + smaller font on mobile */
+  .get-in-touch-wrapper,
+  [class*="getInTouchWrapper"],
+  [class*="get-in-touch"] .container {
+    width: 96% !important;
+    max-width: 100% !important;
+    padding: 0 4% !important;
+  }
+
+  [class*="getInTouch"] h2,
+  [class*="get-in-touch"] h2 {
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
+  }
+
+  [class*="getInTouch"] p,
+  [class*="get-in-touch"] p {
+    font-size: 0.88rem !important;
+  }
+
+  [class*="getInTouch"] input,
+  [class*="getInTouch"] textarea,
+  [class*="getInTouch"] button,
+  [class*="get-in-touch"] input,
+  [class*="get-in-touch"] textarea,
+  [class*="get-in-touch"] button {
+    font-size: 0.9rem !important;
   }
 }

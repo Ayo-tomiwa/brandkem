@@ -1,21 +1,23 @@
 .about-hero {
   position: relative;
-  height: 60vh;
-  min-height: 340px;
+  height: 65vh;
+  min-height: 380px;
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  will-change: transform;
 }
 
 .about-hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    rgba(60, 20, 60, 0.70),
-    rgba(60, 20, 60, 0.70)
+    rgba(60, 20, 60, 0.7),
+    rgba(60, 20, 60, 0.7)
   );
 }
 
@@ -28,7 +30,6 @@
 
 .about-hero-breadcrumb {
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
   margin-bottom: 1rem;
   letter-spacing: 0.06em;
@@ -36,7 +37,6 @@
 
 .about-hero-title {
   font-family: "Poppins", sans-serif;
-  font-size: clamp(42px, 6vw, 68px);
   font-weight: 800;
   color: #fff;
   line-height: 1.1;
@@ -45,22 +45,22 @@
 
 .about-hero-sub {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: 0.12em;
 }
 
+/* ================= MOBILE FIX ================= */
 @media (max-width: 560px) {
   .about-hero {
-    height: 50vh;
+    height: 75vh; /* 👈 fuller height on small screens */
   }
 
   .about-hero-title {
-    font-size: 38px;
+    font-size: 34px;
   }
 
   .about-hero-sub {
     font-size: 13px;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 }

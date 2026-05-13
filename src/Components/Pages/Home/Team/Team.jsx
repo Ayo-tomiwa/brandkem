@@ -15,16 +15,23 @@ const Team = () => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
     }, 4000);
-
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <div className={classes.teamContainer}>
       <div className={classes.teamWrapper}>
+
+        {/* ── Heading block ── */}
+        <span className={classes.teamLabel}>The People Behind the Work</span>
+        <h2>
+          Meet the <span>Team</span>
+        </h2>
         <h3>
           We are a greatly inspired team full of ideas, creativity, and energy
         </h3>
+
+        {/* ── Images ── */}
         <div className={classes.team}>
           <img src={ourTeam} alt="Our Team" className={classes.leftImage} />
           <img
@@ -33,9 +40,11 @@ const Team = () => {
             className={classes.rightImage}
           />
         </div>
-        <Link to="our-team">
+
+        <Link to="/our-team">
           <button className={classes.button}>Meet Our Team ➡</button>
         </Link>
+
       </div>
     </div>
   );

@@ -6,18 +6,24 @@ import "aos/dist/aos.css";
 
 const GetInTouch = () => {
   useEffect(() => {
-    AOS.init({ duration: 1300 });
+    AOS.init({
+      duration: 900,
+      once: true,
+      offset: 100,
+    });
   }, []);
 
   return (
     <div className={classes.GetInTouchContainer}>
-      <div className={classes.GetInTouchWrapper} data-aos="fade-down">
-        <img src={group} alt="" />
-        <h3 style={{ color: "white" }}>Get In Touch</h3>
+      <div className={classes.GetInTouchWrapper} data-aos="fade-up">
+        <img src={group} alt="team illustration" loading="lazy" decoding="async" />
+
+        <h3>Get In Touch</h3>
+
         <p className={classes.bold}>
-          Have any questions or enquiries? Or you want to work with us? Send us
-          a mess age below
+          Have any questions or enquiries? Want to work with us? Send us a message below.
         </p>
+
         <a
           href="https://mail.google.com/mail/?view=cm&fs=1&to=brandkemistry@gmail.com"
           target="_blank"
@@ -25,10 +31,6 @@ const GetInTouch = () => {
         >
           <button className={classes.groupBtn}>Send a Mail</button>
         </a>
-
-        {/* <a href="mailto:brandkemistry@gmail.com">
-          <button className={classes.groupBtn}>Send a Mail</button>
-        </a> */}
       </div>
     </div>
   );

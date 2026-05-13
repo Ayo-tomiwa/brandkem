@@ -4,10 +4,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: background-color 0.3s ease, padding 0.3s ease,
-    box-shadow 0.3s ease;
   z-index: 1000;
   background-color: transparent;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .headerWrapper {
@@ -18,7 +17,6 @@
   align-items: center;
 }
 
-/* LOGO */
 .logo {
   display: flex;
   align-items: center;
@@ -31,7 +29,6 @@
   object-fit: contain;
 }
 
-/* LINKS */
 .navLinks {
   display: flex;
   gap: 2rem;
@@ -50,7 +47,6 @@
   color: #d6a3ff;
 }
 
-/* SCROLL STATE */
 .scrolled {
   background-color: white;
   padding: 0.6rem 0;
@@ -65,16 +61,14 @@
   filter: brightness(0);
 }
 
-/* HAMBURGER */
 .hamburger {
   display: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 3000;
+  position: relative;
 }
-
-/* ================= RESPONSIVE ================= */
 
 @media screen and (max-width: 1024px) {
   .headerWrapper {
@@ -83,14 +77,16 @@
 }
 
 @media screen and (max-width: 768px) {
+  .headerWrapper {
+    width: 92%;
+  }
+
   .hamburger {
     display: block;
     color: white;
-    font-size: 2rem;
-    z-index: 1200;
+    z-index: 3000;
   }
 
-  /* BACKDROP (IMPORTANT FIX) */
   .navBackdrop {
     position: fixed;
     inset: 0;
@@ -98,7 +94,7 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.3s ease;
-    z-index: 999;
+    z-index: 1500;
   }
 
   .navBackdrop.active {
@@ -106,23 +102,23 @@
     pointer-events: all;
   }
 
-  /* MENU */
   .navLinks {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 80%; /* better UX than 100% */
+    left: 0;
+    width: 110%;
     height: 100vh;
     background-color: rgb(26, 10, 46);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    transition: 0.4s ease-in-out;
-    z-index: 1100;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 1600;
   }
 
   .active {
-    right: 0;
+    transform: translateX(0);
   }
 }

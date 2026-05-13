@@ -1,48 +1,125 @@
 .teamContainer {
   width: 100%;
-  margin-top: 6rem;
-  text-align: center;
+  padding: 5rem 0;
 }
 
 .teamWrapper {
-  width: 80%;
+  width: 85%;
+  max-width: 1100px;
   margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
 }
 
-.teamWrapper h3 {
+/* ── Label ── */
+.teamLabel {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: purple;
-  font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
+  margin-bottom: 0.55rem;
+}
+
+/* ── Heading ── */
+.teamWrapper h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #000;
+  line-height: 1.2;
+  margin: 0 0 0.75rem;
+}
+
+.teamWrapper h2 span {
+  color: purple;
+}
+
+/* ── Subtext ── */
+.teamWrapper h3 {
+  font-size: 0.95rem;
   font-weight: 400;
-  margin-bottom: 2.2rem;
+  color: #000;
+  line-height: 1.7;
+  max-width: 620px;
+  margin: 0 0 2.5rem;
 }
 
+/* ── IMAGE WRAPPER (FIXED RESPONSIVE STRUCTURE) ── */
 .team {
-  width: 100%;
   display: flex;
-  flex-direction: row;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 2rem;
 }
 
+/* each image */
 .team img {
   width: 50%;
+  height: 420px;
+  object-fit: cover;
   cursor: pointer;
+  transition: transform 0.4s ease;
 }
 
+/* hover effect */
+.team img:hover {
+  transform: scale(1.03);
+}
+
+/* button */
 .button {
-  margin-top: 2rem;
-  background-color: purple;
-  color: #fff;
-  border: none;
-  padding: 13px 40px;
-  border-radius: 5px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
+  background-color: rgb(186, 184, 184);
+  border: 1px solid rgb(100, 100, 100);
+  padding: 14px 36px;
+  color: #111;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 1024px) {
+.button:hover {
+  background-color: purple;
+  border-color: purple;
+  color: #fff;
+}
+
+/* ===========================
+   RESPONSIVE FIX (IMPORTANT)
+=========================== */
+
+@media (max-width: 768px) {
+
   .teamWrapper {
-    width: 90%;
+    width: 92%;
+  }
+
+  /* stack images vertically */
+  .team {
+    flex-direction: column;
+  }
+
+  .team img {
+    width: 100%;
+    height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .teamContainer {
+    padding: 3.5rem 0;
+  }
+
+  .team img {
+    height: 220px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 280px;
   }
 }

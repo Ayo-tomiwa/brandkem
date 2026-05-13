@@ -84,7 +84,7 @@
 
   .heroWrapper {
     width: 92%;
-    padding-top: 10rem;
+    padding-top: 13rem;
     min-height: auto;
   }
 
@@ -106,7 +106,7 @@
 
 @media screen and (max-width: 480px) {
   .heroWrapper {
-    padding-top: 8rem;
+    padding-top: 11rem;
   }
 
   .heroWrapper h1 {
@@ -123,5 +123,15 @@
     width: 100%;
     padding: 14px 20px;
     font-size: 0.95rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .heroWrapper {
+    padding-top: 10rem;
+  }
+
+  .heroWrapper h1 {
+    font-size: 1.95rem;
   }
 }

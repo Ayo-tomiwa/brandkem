@@ -142,6 +142,8 @@ const TeamCarousel = () => {
                   src={member.image}
                   alt={member.name}
                   className="tc-photo"
+                      loading="lazy"
+    decoding="async"
                 />
 
                 <div className="tc-photo-overlay" />
