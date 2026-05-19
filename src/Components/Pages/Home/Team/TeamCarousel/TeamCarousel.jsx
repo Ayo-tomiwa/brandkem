@@ -1,10 +1,16 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useEffect } from "react";
 import "./TeamCarousel.css";
 
-import wale from "../../../../../images/wale.jpg";
-import teamMember1 from "../../../../../images/teamMember1.jpg";
-import teamMember2 from "../../../../../images/teamMember2.jpg";
-import teamMember3 from "../../../../../images/teamMember3.jpg";
+import teamMember1 from "../../../../../images/team-1.jpg";
+import teamMember2 from "../../../../../images/team-2.jpg";
+import teamMember3 from "../../../../../images/team-3.jpg";
+import teamMember4 from "../../../../../images/team-4.jpg";
+import teamMember5 from "../../../../../images/team-5.jpg";
+import teamMember6 from "../../../../../images/team-6.jpg";
+import teamMember7 from "../../../../../images/team-7.jpg";
+import teamMember8 from "../../../../../images/team-8.jpg";
+import teamMember9 from "../../../../../images/team-9.jpg";
+import teamMember10 from "../../../../../images/team-10.jpg";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -12,165 +18,134 @@ import "aos/dist/aos.css";
 const teamMembers = [
   {
     name: "Adeleke Akanbi",
-    role: "COO / Operations Lead",
-    image: wale,
-    bio: "An astute marketing professional with over 15 years managing events and activations for FMCG brands across Nigeria. MBA in Marketing (LAUTECH); certified Associate member of ARCON. Leads work for Goldberg, JTI, Life Beer, Dangote Flour, Fayrouz, Nigerian Breweries and Frapapa Bet.",
-  },
-  {
-    name: "Emmanuel Williams-Ugbebor",
-    role: "Creative · Strategy",
+    role: "Managing Consultant",
     image: teamMember1,
-    bio: "A visualizer par excellence with an enviable portfolio of captivating graphic designs. Economics graduate of Lagos State University; deep experience across FMCG, banking, oil & gas, telecoms and hospitality — Dangote Cement, Fayrouz, Goldberg, Samsung and many more.",
+    bio: "Akanbi Adeleke is an astute marketing professional with over 15 years of experience in Brand Building and Experiential Marketing. He has managed successful activations and experiential campaigns for leading FMCG brands across Nigeria including Goldberg, JTI, Dangote Flour, Fayrouz, UAC Restaurants, Nigerian Breweries and many more.",
   },
+
   {
-    name: "Kofoworola Olagunju",
-    role: "Head, Activations / Experiential",
+    name: "Kingsley Emeagwai",
+    role: "Strategy / Biz Director",
     image: teamMember2,
-    bio: "Marketing communications expert with over 13 years experience in brand building and activations spanning FMCG, banking and public sector. Holds a degree in Electrical Engineering. Former Trade/Channel Manager at NIVEA.",
+    bio: "Kingsley Emeagwai is a strategic leader passionate about creativity and impactful brand communication. With vast experience in print, digital and advertising, he has worked across FMCG, banking, telecoms and hospitality industries for brands like MTN, Pepsi, Peak Milk, Gulder, Rothmans and Coronation Bank.",
   },
+
+  {
+    name: "John Olugbenga",
+    role: "Strategy Manager",
+    image: teamMember3,
+    bio: "John is a seasoned product and brand marketer with over 9 years experience in account management, business development and digital marketing. He has driven growth for major brands including Nigerian Breweries, JTI, FanMilk Nigeria, Henkel and UAC Foods & Restaurants.",
+  },
+
+  {
+    name: "Adewale Kehinde",
+    role: "Head, Operations",
+    image: teamMember4,
+    bio: "Adewale Kehinde is a results-driven marketing communications professional with over 15 years experience in brand building, activations, trade marketing and production management. He has worked with organizations such as Unilever, Seven-Up, Dangote Group, Nigerian Breweries and CHI Limited.",
+  },
+
   {
     name: "Mercy Ogbumu",
     role: "Account Manager",
-    image: teamMember3,
-    bio: "Self-motivated account manager with 8+ years in client relationship management. Has worked on Colgate-Palmolive, LG Electronics, Union Bank, Samsung and more. Associate member of APCON.",
+    image: teamMember5,
+    bio: "Mercy is a self-motivated advertising professional passionate about delivering creative solutions to clients. With over 8 years of experience in client relationship management, she has worked on brands including Colgate-Palmolive, LG Electronics, Samsung, Motorola, Union Bank and Premium Pension.",
   },
+
   {
-    name: "Aladegoroye Tiwalade",
-    role: "Admin Manager",
-    image: teamMember1,
-    bio: "A dynamic, experienced personality who oversees the smooth daily running of the company — ensuring compliance across operations, management and overall employee welfare.",
+    name: "Aiyedun Muyiwa",
+    role: "Creative Lead",
+    image: teamMember6,
+    bio: "Muyiwa is a Creative Director with over 12 years experience in ATL and BTL marketing communications. He has worked with leading agencies such as Insight Communications, Noah’s Ark, Leo Burnett and Sharebeta, delivering creative campaigns for multinational and local brands.",
   },
+
   {
     name: "Segun Ajayi",
     role: "Head of Finance",
-    image: teamMember2,
-    bio: "Finance expert with over a decade of experience in accounting, auditing and taxation, having worked in different financial-management capacities both locally and internationally.",
+    image: teamMember7,
+    bio: "Segun Ajayi is a finance expert with over a decade of experience in accounting, auditing and taxation. He has worked in different financial management capacities both locally and internationally.",
   },
+
   {
-    name: "Seyi Adenusi",
-    role: "Experiential Manager",
-    image: teamMember3,
-    bio: "An astute experiential manager with a proven track record across production, marketing communications, experiential and consumer engagement.",
+    name: "Creative Strategy Team",
+    role: "Brand Strategists",
+    image: teamMember8,
+    bio: "Our strategy team consists of passionate marketers, creative thinkers and customer retention experts focused on developing innovative marketing solutions that help brands grow and connect with consumers.",
+  },
+
+  {
+    name: "Brand Activation Team",
+    role: "Experiential Experts",
+    image: teamMember9,
+    bio: "The activation team specializes in experiential marketing, events and consumer engagement campaigns, helping brands create memorable experiences and stronger customer connections.",
+  },
+
+  {
+    name: "Brandkemistry Team",
+    role: "Thinkers • Strategists • Designers",
+    image: teamMember10,
+    bio: "Brandkemistry is made up of consultants, designers, strategists and activation experts united by creative thinking and strategic planning to achieve the marketing objectives of clients across industries.",
   },
 ];
 
-const PER_PAGE = 3;
-const TOTAL_PAGES = Math.ceil(teamMembers.length / PER_PAGE);
-const INTERVAL = 4500;
-
 const TeamCarousel = () => {
-
-  const [page, setPage] = useState(0);
-  const [paused, setPaused] = useState(false);
-
-  const timerRef = useRef(null);
 
   useEffect(() => {
     AOS.init({
-      duration: 1300,
+      duration: 1200,
       once: true,
     });
   }, []);
 
-  const goTo = useCallback((n) => {
-    setPage(((n % TOTAL_PAGES) + TOTAL_PAGES) % TOTAL_PAGES);
-  }, []);
-
-  const resetTimer = useCallback(() => {
-    clearInterval(timerRef.current);
-
-    timerRef.current = setInterval(() => {
-      setPage((p) => (p + 1) % TOTAL_PAGES);
-    }, INTERVAL);
-  }, []);
-
-  useEffect(() => {
-    if (!paused) resetTimer();
-    else clearInterval(timerRef.current);
-
-    return () => clearInterval(timerRef.current);
-  }, [paused, resetTimer]);
-
-  const visible = teamMembers.slice(
-    page * PER_PAGE,
-    page * PER_PAGE + PER_PAGE
-  );
-
   return (
-    <section
-      className="tc-section"
-      data-aos="fade-up"
-    >
+    <section className="tc-section" data-aos="fade-up">
       <div className="tc-inner">
 
-        <div
-          className="tc-header"
-          data-aos="fade-right"
-        >
-          <h2
-            className="tc-title"
-            data-aos="fade-right"
-            data-aos-delay="200"
-          >
-            Meet the team
+        <div className="tc-header">
+          <span className="tc-tag">
+            Our Team
+          </span>
+
+          <h2 className="tc-title">
+            Meet The Experts Behind Brandkemistry
           </h2>
 
-          <p
-            className="tc-desc"
-            data-aos="fade-down"
-            data-aos-delay="400"
-          >
-            Brand consultants, creative directors, activation experts and strategists —
-            united by one goal: your brand's success.
+          <p className="tc-desc">
+            Our team includes passionate marketers,
+            brand consultants, strategists, activation experts,
+            designers and customer retention specialists.
           </p>
         </div>
 
-        <div
-          className="tc-grid"
-          onMouseEnter={() => setPaused(true)}
-          onMouseLeave={() => setPaused(false)}
-        >
-          {visible.map((member, idx) => (
+        <div className="tc-grid">
+          {teamMembers.map((member, idx) => (
             <div
               className="tc-card"
-              key={page + "-" + idx}
+              key={idx}
               data-aos="zoom-in-up"
-              data-aos-delay={idx * 150}
+              data-aos-delay={idx * 100}
             >
               <div className="tc-photo-wrap">
                 <img
                   src={member.image}
-                  alt={member.name || ""}
+                  alt={member.name}
                   className="tc-photo"
-                      loading="lazy"
-    decoding="async"
+                  loading="lazy"
+                  decoding="async"
                 />
 
-                <div className="tc-photo-overlay" />
+                <div className="tc-photo-overlay"></div>
               </div>
 
               <div className="tc-body">
-                <h3
-                  className="tc-name"
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                >
+                <h3 className="tc-name">
                   {member.name}
                 </h3>
 
-                <p
-                  className="tc-role"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
+                <p className="tc-role">
                   {member.role}
                 </p>
 
-                <p
-                  className="tc-bio"
-                  data-aos="fade-down"
-                  data-aos-delay="400"
-                >
+                <p className="tc-bio">
                   {member.bio}
                 </p>
               </div>
@@ -178,52 +153,9 @@ const TeamCarousel = () => {
           ))}
         </div>
 
-        <div
-          className="tc-controls"
-          data-aos="fade-up"
-          data-aos-delay="300"
-        >
-          <button
-            className="tc-arrow"
-            onClick={() => {
-              goTo(page - 1);
-              resetTimer();
-            }}
-            aria-label="Previous"
-          >
-            &#8592;
-          </button>
-
-          <div className="tc-dots">
-            {Array.from({ length: TOTAL_PAGES }).map((_, i) => (
-              <button
-                key={i}
-                className={"tc-dot" + (i === page ? " active" : "")}
-                onClick={() => {
-                  goTo(i);
-                  resetTimer();
-                }}
-                aria-label={"Page " + (i + 1)}
-              />
-            ))}
-          </div>
-
-          <button
-            className="tc-arrow"
-            onClick={() => {
-              goTo(page + 1);
-              resetTimer();
-            }}
-            aria-label="Next"
-          >
-            &#8594;
-          </button>
-        </div>
-
       </div>
     </section>
   );
-  
 };
 
 export default TeamCarousel;

@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/Footer.jsx"
 import TeamPage from "./Pages/TeamPage/TeamPage.jsx"
 import ContactPage from "./Pages/Contact/ContactPage.jsx";
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop.jsx";
+import PortfolioPage from "./Components/Pages/Home/Portfolio/PortfolioPage.jsx";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/about-us" element={<AboutPage />} />
           <Route path="/our-team" element={<TeamPage />} />
           <Route path="/contact-us" element={<ContactPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} /> 
         </Routes>
         <Footer />
       </div>

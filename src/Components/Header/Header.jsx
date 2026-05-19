@@ -58,7 +58,7 @@ const Header = () => {
               <Link to="/our-team" onClick={closeMenu}>Our Team</Link>
             </li>
             <li>
-              <a href="#portfolio" onClick={closeMenu}>Portfolio</a>
+              <Link to="/portfolio" onClick={closeMenu}>Portfolio</Link>
             </li>
             <li>
               <Link to="/contact-us" onClick={closeMenu}>Contact</Link>
